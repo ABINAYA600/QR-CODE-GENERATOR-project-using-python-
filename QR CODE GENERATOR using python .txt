@@ -1,0 +1,19 @@
+import  qrcode
+
+data=" https://www.linkedin.com/in/abinaya-d-98b98b327"
+
+
+qr = qrcode.QRCode(
+         version = 1 , 
+         error_correction = qrcode.constants.ERROR_CORRECT_L , 
+         box_size = 10 , 
+         border = 4)
+         
+qr.add_data(data)
+qr.make(fit = True)
+
+img = qr.make_image(fill ="black" , back_color ="White")
+
+img.save("linkedId.png")
+
+print("Qr code is generated")
